@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pizza Restaurant - Menu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Special Offer Banner -->
+  <div class="offer-banner">
+    <p>Limited Time Offer: Get 20% For all drinks !</p>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav>
+    <!-- Hamburger Icon (for small screens) -->
+    <div class="hamburger" onclick="toggleSideNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <!-- Desktop Navigation Links -->
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#how">How We Make Pizza</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#branches">Our Branches</a>
+    </div>
+    
+    <!-- Cart Icon -->
+    <div class="cart-icon" onclick="toggleCartModal()">
+      <img src="image/cart-icon.jpg" alt="Shopping Cart">
+      <div class="cart-count" id="cartCount">0</div>
+    </div>
+  </nav>
+
+  <!-- Side Navigation (for mobile) -->
+  <div id="sideNav" class="side-nav">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleSideNav()">&times;</a>
+    <a href="#home" onclick="toggleSideNav()">Home</a>
+    <a href="#services" onclick="toggleSideNav()">Services</a>
+    <a href="#how" onclick="toggleSideNav()">How We Make Pizza</a>
+    <a href="#menu" onclick="toggleSideNav()">Menu</a>
+    <a href="#contact" onclick="toggleSideNav()">Contact Us</a>
+    <a href="#branches" onclick="toggleSideNav()">Our Branches</a>
+  </div>
+
+  <!-- Header Section -->
+  <header id="home">
+    <h1 class="animate-slide">Pizza Restaurant</h1>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <p>We offer the finest pizzas made with natural ingredients, fast delivery, and a unique dining experience.</p>
+  </section>
+
+  <!-- How We Make Pizza Section -->
+  <section id="how">
+    <h2>How We Make Pizza</h2>
+    <p>We carefully select the best natural ingredients. Our dough is handmade and seasoned using traditional methods with a professional touch to ensure great taste.</p>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <h2>Menu</h2>
+    <div class="menu-items">
+      <!-- Menu Item: Margherita Pizza -->
+      <div class="menu-item">
+        <img src="image/pizza1.jpg" alt="Margherita Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>Tomato sauce, mozzarella, fresh basil</p>
+        <div class="price">35 SAR</div>
+        <button onclick="addToCart('Margherita Pizza', 35)">Add to Cart</button>
+      </div>
+      <!-- Menu Item: Pepperoni Pizza -->
+      <div class="menu-item">
+        <img src="image/pizza2.jpg" alt="Pepperoni Pizza">
+        <h3>Pepperoni Pizza</h3>
+        <p>Tomato sauce, mozzarella, pepperoni</p>
+        <div class="price">45 SAR</div>
+        <button onclick="addToCart('Pepperoni Pizza', 45)">Add to Cart</button>
+      </div>
+      <!-- Menu Item: Veggie Pizza -->
+      <div class="menu-item">
+        <img src="image/pizza3.jpg" alt="Veggie Pizza">
+        <h3>Veggie Pizza</h3>
+        <p>Tomato sauce, mozzarella, green pepper, onion, olives</p>
+        <div class="price">40 SAR</div>
+        <button onclick="addToCart('Veggie Pizza', 40)">Add to Cart</button>
+      </div>
+      <!-- Menu Item: Chicken Pizza -->
+      <div class="menu-item">
+        <img src="image/pizza4.jpg" alt="Chicken Pizza">
+        <h3>Chicken Pizza</h3>
+        <p>Tomato sauce, mozzarella, grilled chicken, corn</p>
+        <div class="price">50 SAR</div>
+        <button onclick="addToCart('Chicken Pizza', 50)">Add to Cart</button>
+      </div>
+      <!-- Menu Item: Coca-Cola -->
+      <div class="menu-item">
+        <img src="image/coke.jpg" alt="Coca-Cola">
+        <h3>Coca-Cola</h3>
+        <p>Refreshing soda drink</p>
+        <div class="price">10 SAR</div>
+        <button onclick="addToCart('Coca-Cola', 10)">Add to Cart</button>
+      </div>
+      <!-- Menu Item: Orange Juice -->
+      <div class="menu-item">
+        <img src="image/orange-juce.jpg" alt="Orange Juice">
+        <h3>Orange Juice</h3>
+        <p>100% natural and refreshing</p>
+        <div class="price">12 SAR</div>
+        <button onclick="addToCart('Orange Juice', 12)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shopping Cart Modal -->
+  <div class="modal" id="cartModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Shopping Cart</h3>
+        <span class="close-modal" onclick="toggleCartModal()">&times;</span>
+      </div>
+      <div id="cartItems">
+        <!-- Cart items will be populated by JavaScript -->
+        <p>Your cart is empty.</p>
+      </div>
+      <div class="cart-actions">
+        <strong>Total: <span id="cartTotal">0</span> SAR</strong>
+        <br><br>
+        <button onclick="confirmPurchase()">Confirm Purchase</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>For inquiries and reservations, please call: 123456789 or email us at info@pizzarestaurant.com</p>
+  </section>
+
+  <!-- Branches Section -->
+  <section id="branches">
+    <h2>Our Branches</h2>
+    <p>Riyadh Branch: King’s Street, City Center.</p>
+    <p>Jeddah Branch: Beach Street, Corniche Area.</p>
+    <p>Dammam Branch: Gulf Street, Business District.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Pizza Restaurant</p>
+    <div class="social">
+      <a href="#" title="Facebook">Facebook</a>
+      <a href="#" title="Instagram">Instagram</a>
+      <a href="#" title="Twitter">Twitter</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
