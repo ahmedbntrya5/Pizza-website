@@ -170,7 +170,7 @@ nav .cart-count {
 
 /* Header Section */
 header {
-  background: url('image/pizza-bg.jpg') no-repeat center center/cover;
+  background: url('pizza-bg.jpg') no-repeat center center/cover;
   height: 300px;
   display: flex;
   align-items: center;
